@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+          http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+
+    <context-param>
+        <description>Create CPE entry automatically on Inform</description>
+        <param-name>org.openacs.AutoCreateCPE</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+    <servlet>
+        <description>Main servlet for TR-069 messages processing. It's URL must be configured in CPEs.</description>
+        <servlet-name>ACS servlet</servlet-name>
+        <servlet-class>org.openacs.ACSServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ACS servlet</servlet-name>
+        <url-pattern>/acs</url-pattern>
+    </servlet-mapping>
+</web-app>
